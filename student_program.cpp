@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
-char* reverse( char str1[] ) ;
+char* reverse( const char str1[] ) ;
 
 int main() {
 
-    char text[ 50 ] ; //ข้อความที่ต้องการจะกลับ
+    char text[ 50 ] = "I Love You"; //ข้อความที่ต้องการจะกลับ
     char *output ;
     output = reverse( text ) ;
     printf( "MAIN : %s\n", output ) ;
@@ -13,8 +13,8 @@ int main() {
     return 0 ;
 }//end function
 
-char* reverse( char str1[] ) {
-    char text[50] = "I Love You" ;
+char* reverse( const char str1[] ) {
+    
     int len = strlen(str1) ;
     static char reversed[50] ; //ให้ค่าคงอยู่หลังออกจากฟังก์ชัน
 
