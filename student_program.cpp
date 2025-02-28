@@ -5,9 +5,12 @@ char* reverse( const char str1[] ) ;
 
 int main() {
 
-    char text[ 50 ] = "I Love You"; //ข้อความที่ต้องการจะกลับ
-    char *output ;
-    output = reverse( text ) ;
+    char text[ 50 ] ; //ข้อความที่ต้องการจะกลับ
+    printf( "Enter str1: " ) ;
+    fgets( text, sizeof(text), stdin ) ;
+    text[ strcspn( text, "\n" ) ] = '\0' ; //
+
+    char *output = reverse( text ) ;
     printf( "MAIN : %s\n", output ) ;
 
     return 0 ;
